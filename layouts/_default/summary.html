@@ -46,7 +46,8 @@
       {{ else }}
         <a class="link-unstyled" href="{{ .Permalink }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ .Title }}{{ end }}">
       {{ end }}
-          {{ .Title }}
+      <i class="postShorten-title-icon {{ .Params.iconClass }}"></i>
+      {{ .Title }}
         </a>
       </h1>
       {{ partial "post/meta" . }}
@@ -76,6 +77,11 @@
       <div class="postShorten-thumbnailimg">
         <img alt="" src="{{ .Scratch.Get "thumbnailImage" }}"/>
       </div>
+    </a>
+  {{ end }}
+  {{ if .Params.iconClass }}
+    <a href="{{ .Permalink }}" aria-label="{{ if i18n " global.open_post" }}{{ i18n "global.open_post" }}: {{ .Title }}{{ end }}">
+      <i class="postShorten-thumbnail-icon {{ .Params.iconClass }}"></i>
     </a>
   {{ end }}
 </article>
