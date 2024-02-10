@@ -8,6 +8,13 @@
             text-decoration: none;
         }
     }
+    .post-header-icon {
+        display: inline-block;
+        margin-top: map-get($headings-font-size, h1)*0.2;
+        margin-bottom: map-get($headings-font-size, h1)*0.2;
+        vertical-align: middle;
+        color: map-get($colors, light);
+    }
 }
 
 // Cover image displayed in single post view
