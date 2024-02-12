@@ -11,7 +11,11 @@
     <div id="about-card-bio">{{ . | markdownify }}</div>
     {{ end }}
     {{ with .Site.Params.Description }}
-    <div id="about-card-bio">{{ . | markdownify }}</div>
+    <div id="about-card-description">
+        {{ range . }}
+        <p>{{ .txt | markdownify }}</p>
+        {{ end }}
+    </div>
     {{ end }}
     {{ with .Site.Params.Author.job }}
     <div id="about-card-job">
